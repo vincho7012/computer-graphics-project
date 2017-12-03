@@ -1,55 +1,25 @@
 <html>
 <head>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script>
-
-  var reader;
-
-  var openFile = function(event) {
-    var input = event.target;
-
-    reader = new FileReader();
-    reader.onload = function(){
-      var dataURL = reader.result;
-    };
-    reader.readAsDataURL(input.files[0]);
-  };
-
-  $(document).ready(function(){
-
-    $("form[name='uploader']").submit(function(e) {
-
-          var formData = {};
-          formData.image = reader.result;
-          formData.filter = $('#filter').val();
-        $.ajax({
-            url: "http://localhost:3000",
-            type: "POST",
-            data: JSON.stringify(formData),
-            async: false,
-            success: function (msg) {
-                output.src = msg;
-                input.src = reader.result;
-            },
-            cache: false,
-            contentType: false,
-            processData: false
-        });
-
-        e.preventDefault();
-    });
-
-
-  });
-  </script>
+  <script src="script.js"></script>
 </head>
 <body>
   <form name="uploader" id="1">
+    Select image filter:
+    <select id="filter" name="filter">
+      <option value=""></option>
+      <option value="charcoal">Charcoal</option>
+      <option value="flop">Flop</option>
+      <option value="blur">Blur</option>
+      <option value="emboss">Emboss</option>
+      <option value="quantize">Quantize</option>
+      <option value="sepiatone">Sepiatone</option>
+    </select><br>
     Image:<br>
-    <input id ="image" name = "image" type="file" accept="image/*" onchange='openFile(event)'>
+    <input id ="image" name = "image" type="file" accept="image/*" onchange='openFile(event)' style="display:none" class="hide">
     <br><br>
-    <input id ='filter' type="text" name="filter">
-    <input type="submit" value="Submit">
+
+    <input type="submit" value="Submit" style="display:none" class="hide">
   </form>
   <img id = 'input'>
   <img id ='output'>
