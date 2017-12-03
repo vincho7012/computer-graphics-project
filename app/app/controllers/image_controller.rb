@@ -20,6 +20,9 @@ class ImageController < ApplicationController
     if filter == "emboss"
       img = img.emboss(2)
     end
+    if filter == "quantize"
+      img=img.quantize(256, Magick::GRAYColorspace)
+    end
     data_uri = Base64.encode64(img.to_blob).gsub(/\n/, "")
     data_uri = image_type + data_uri
 
