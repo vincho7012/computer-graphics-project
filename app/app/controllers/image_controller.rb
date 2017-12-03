@@ -17,6 +17,13 @@ class ImageController < ApplicationController
     if filter == "blur"
       img = img.motion_blur(0, 10, 30)
     end
+    if filter == "quantize"
+      img = img.quantize(256, Magick::GRAYColorspace)
+    end
+    if filter == "sepiatone"
+      img = img.quantize(256, Magick::GRAYColorspace)
+      img = img.colorize(0.30, 0.30, 0.30, '#cc9933')
+    end
     if filter == "emboss"
       img = img.emboss(2)
     end
