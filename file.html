@@ -2,10 +2,11 @@
 <head>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="script.js"></script>
+  <LINK href="style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
   <form name="uploader" id="1">
-    Select image filter:
+    <a id="filt">Select image filter:</a>
     <select id="filter" name="filter">
       <option value=""></option>
       <option value="charcoal">Charcoal</option>
@@ -15,11 +16,12 @@
       <option value="quantize">Quantize</option>
       <option value="sepiatone">Sepiatone</option>
     </select><br>
-    Image:<br>
+    <a id="img">Image:</a>
+	<br>
     <input id ="image" name = "image" type="file" accept="image/*" onchange='openFile(event)' style="display:none" class="hide">
     <br><br>
 
-    <input type="submit" value="Submit" style="display:none" class="hide">
+    <input type="submit" id="submit" value="Submit" style="display:none" class="hide">
   </form>
   <img id = 'input'>
   <img id ='output'>
