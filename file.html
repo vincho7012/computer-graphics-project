@@ -2,29 +2,55 @@
 <head>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="script.js"></script>
-  <LINK href="style.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css">
 </head>
-<body>
-  <form name="uploader" id="1">
-    <a id="filt">Select image filter:</a>
-    <select id="filter" name="filter">
-      <option value=""></option>
-      <option value="charcoal">Charcoal</option>
-      <option value="flop">Flop</option>
-      <option value="blur">Blur</option>
-      <option value="emboss">Emboss</option>
-      <option value="quantize">Quantize</option>
-      <option value="sepiatone">Sepiatone</option>
-    </select><br>
-    <a id="img">Image:</a>
-	<br>
-    <input id ="image" name = "image" type="file" accept="image/*" onchange='openFile(event)' style="display:none" class="hide">
-    <br><br>
+<body style="bg-dark !important;">
+    <div class ="btn-primary" >
+    <section style="background:transparent !important" class="jumbotron">
+      <div class="container bg-primary" >
+        <h1>Image Filter</h1>
+      </div>
+    </section>
+  </div>
+    <form name="uploader" id="1">
+      <div class="container">
+        <label>Select Image Filter:</label>
+        <select class="form-control" data-style="btn-primary" id="filter" name="filter" >
+          <option value=""></option>
+          <option value="charcoal">Charcoal</option>
+          <option value="flop">Flop</option>
+          <option value="blur">Blur</option>
+          <option value="emboss">Emboss</option>
+          <option value="quantize">Quantize</option>
+          <option value="sepiatone">Sepiatone</option>
+        </select><br>
+        <label class = "hide">Select Image:</label>
 
-    <input type="submit" id="submit" value="Submit" style="display:none" class="hide">
-  </form>
-  <img id = 'input'>
-  <img id ='output'>
+      <div class = "imageupload panel panel-default">
+        <div class="panel-heading clearfix">
+          <h3 class = "panel-title pull-left">Upload Image</h3>
+        </div>
+        <div class = "file-tab panel-body" style = "display: block;">
+          <label class="btn btn-default btn-file">
+            <span>Browse</span>
+            <input id ="image" name = "image" type="file" accept="image/*" onchange='openFile(event)' style = "display: none;">
+          </label>
+        </div>
+
+        <div class="thumbnail">
+          <img id = 'input' class="img-thumbnail img-responsive center-block">
+          <img id ='output' class="img-thumbnail img-responsive center-block">
+        </div>
+        
+      </div>
+      <input type="submit" id="submit" value="Submit"   class="btn btn-primary">
+      </div>
+    </form>
+
+
+
+
 
 
 </body>

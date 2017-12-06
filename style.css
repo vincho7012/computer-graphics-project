@@ -47,14 +47,14 @@ body
 
 a#img
 {
-	
+
 	position: relative;
 	display: block;
 	margin: 30px 0px 0px 0px;
 	font-size: 25px;
 	font-style: super;
 	border-bottom: solid double;
-	font-style: italic; 
+	font-style: italic;
 	white-space: nowrap;
 	margin: 0 auto;
 	margin-left: -130px
@@ -62,13 +62,13 @@ a#img
 a#filt
 {
 	font-style: oblique;
-	//font-weight: lighter;	
+	//font-weight: lighter;
 	font-size: 55px;
 	font-family: "Times New Roman", Georgia, Serif;
 	border-bottom: solid double;
 	display: inline-block;
 	border: solid;
-	
+
 	white-space: nowrap;
 	border-bottom: 5px solid;
 	margin: 0px 0px 15px -145px;
@@ -83,4 +83,13 @@ select
     font-size: 16px;
     border: none;
     cursor: pointer;
+}
+
+img
+{
+	position: static;
+	top: default;
+	left: default;
+	width: default;
+	height: default;
 }
